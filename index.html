@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit - Groceries in Minutes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">blink<span>it</span></a>
+
+        <div class="location">
+            <strong>Delivery in 10 minutes</strong>
+            <small>Indiranagar, Bengaluru ▼</small>
+        </div>
+
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="searchInput"
+                   placeholder="Search for groceries, fruits, etc.">
+        </div>
+
+        <button class="login-btn">Login</button>
+
+        <button class="cart-btn" id="cartButton">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="tagline">YOUR DAILY ESSENTIALS</p>
+                <h1>Groceries delivered<br>in minutes.</h1>
+                <p>Fresh fruits, vegetables and daily essentials at your doorstep.</p>
+                <button class="shop-btn"
+                        onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+                    Shop Now →
+                </button>
+            </div>
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=85"
+                    alt="Fresh groceries and vegetables">
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>Shop by Category</h2>
+            <div class="categories" id="categories">
+                <button class="category active" data-category="All">
+                    <span>🛍️</span>All
+                </button>
+                <button class="category" data-category="Fruits">
+                    <span>🍎</span>Fruits
+                </button>
+                <button class="category" data-category="Vegetables">
+                    <span>🥦</span>Vegetables
+                </button>
+                <button class="category" data-category="Dairy">
+                    <span>🥛</span>Dairy
+                </button>
+                <button class="category" data-category="Snacks">
+                    <span>🍪</span>Snacks
+                </button>
+                <button class="category" data-category="Beverages">
+                    <span>🧃</span>Beverages
+                </button>
+            </div>
+        </section>
+
+        <section class="products-section" id="products">
+            <div class="section-heading">
+                <h2 id="sectionTitle">All Products</h2>
+                <span>Fresh picks for you</span>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+
+            <p class="empty-message" id="emptyMessage" hidden>
+                No products found. Try another search.
+            </p>
+        </section>
+
+        <section class="benefits">
+            <div>⚡ <strong>Quick Delivery</strong><small>At your doorstep</small></div>
+            <div>🥬 <strong>Fresh Products</strong><small>Quality you can trust</small></div>
+            <div>💳 <strong>Easy Shopping</strong><small>Simple cart experience</small></div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="logo">blink<span>it</span></a>
+        <p>Freshness and convenience, delivered to your door.</p>
+        <small>Demo website built using HTML, CSS and JavaScript.</small>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="closeCart" class="close-btn">✕</button>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div id="cartFooter" class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button id="checkoutButton" class="checkout-btn">
+                Proceed to Checkout
+            </button>
+            <small>Demo checkout only. No real payment is processed.</small>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
